@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from '../../../axios';
 
 import Post from '../../../components/Post/Post'
+import './Posts.css'
 
 class Posts extends Component {
     state = {
@@ -9,6 +10,7 @@ class Posts extends Component {
     };
 
     componentDidMount () {
+        console.log(this.props)
         axios.get('/posts')
             .then(response => {
                 const posts = response.data.slice(0,4);
